@@ -2,6 +2,7 @@ package com.productos.inventario.model.dao;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +17,10 @@ public class Sucursal {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    //@OneToMany(mappedBy="sucursal" )
-     //private List<Orden> listaOrdenes;
+
+    @OneToMany(mappedBy="sucursal",  cascade = CascadeType.ALL )
+    private List<Orden> listaOrdenes;
+
     private String nombre;
     
 }

@@ -20,15 +20,14 @@ public class Orden {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long ordenId;
+    private Long id;
 
-    
-    /*@OneToMany(mappedBy="producto" )
+    @OneToMany(mappedBy="orden", cascade=CascadeType.ALL )
     private List<Producto> listaProducto;
 
     @ManyToOne
     @JoinColumn(name="sucursal_id")
-    private Sucursal sucursal;*/
+    private Sucursal sucursal;
 
     private LocalDate fecha;
     private double total;
